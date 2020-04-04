@@ -1,6 +1,5 @@
 import java.util.Scanner;
 
-
 public class AceAptitudeTest {
     public static float Relationships(){
         Scanner reading = new Scanner(System.in);
@@ -12,7 +11,7 @@ public class AceAptitudeTest {
         float total = 0;
 
 
-        System.out.println("In regards to sexual arousal and emotional bond, how do you prioritize your relationships?\n" +
+        System.out.println("\nIn regards to sexual arousal and emotional bond, how do you prioritize your relationships?\n" +
                 "a. More emotional bond than sexual arousal\n" +
                 "b. Equal levels of emotional bond and sexual arousal\n" +
                 "c. More sexual arousal than emotional bond\n"+
@@ -30,7 +29,7 @@ public class AceAptitudeTest {
                 total+=1;
                 break;
         }
-        System.out.println("From the choices below, which unique relationship factor do you believe differentiates a friend from a significant other?\n" +
+        System.out.println("\nFrom the choices below, which unique relationship factor do you believe differentiates a friend from a significant other?\n" +
                 "a. Sexual contact\n" +
                 "b. Strong emotional bond\n" +
                 "c. Other\n" +
@@ -87,7 +86,7 @@ public class AceAptitudeTest {
                 total+=2;
                 break;
         }
-        //System.out.println("Relationship score is " + total);
+        //System.out.println("\nRelationship score is " + total+ "\n");
         return total;
     }
     public static float Sexuality(){
@@ -95,6 +94,7 @@ public class AceAptitudeTest {
         String choice = null;
         int num1;
         int num2;
+        int hold = 0;
         //boolean check1 = num1 <= 2 || num2 <= 2;
         //boolean check2 = num1 > 2 || num2 > 2;
         float total = 0;
@@ -110,6 +110,7 @@ public class AceAptitudeTest {
                 break;
             case "a":
                 total+=2;
+                break;
             case "d":
                 total+=1;
                 break;
@@ -122,19 +123,19 @@ public class AceAptitudeTest {
         num1 = reading.nextInt();
         switch(num1){
             case 1:
-                total += 4;
+                hold = 4;
                 break;
             case 2:
-                total += 3;
+                hold = 3;
                 break;
             case 3:
-                total += 2;
+                hold = 2;
                 break;
             case 4:
-                total+= 1;
+                hold = 1;
                 break;
             case 5:
-                total+= 0;
+                hold = 0;
                 break;
         }
 
@@ -145,23 +146,23 @@ public class AceAptitudeTest {
                 if(num1 > 3){
                     switch(num1){
                         case 4:
-                            total+=1;
+                            total+=(1);
                             break;
                         case 5:
-                            total+=0;
+                            total+=(0);
                             break;
                     }
                 }
                 if(num1 == 3){
-                    total+= 2;
+                    total+= (6);
                 }
                 if (num1 < 3){
                     switch(num1){
                         case 1:
-                            total+=4;
+                            total+=8;//(hold +4);
                             break;
                         case 2:
-                            total+=3;
+                            total+=(7);
                             break;
                     }
                 }
@@ -170,51 +171,73 @@ public class AceAptitudeTest {
                 if(num1 > 3){
                     switch(num1){
                         case 4:
-                            total+=1.5;
+                            total+=(2);
                             break;
                         case 5:
-                            total+=1;
+                            total+=(1);
                             break;
                     }
                 }
                 if(num1 == 3){
-                    total+= 2;
+                    total+= (5);
                 }
                 if (num1 < 3){
                     switch(num1){
                         case 1:
-                            total+=4;
+                            total+=(7);
                             break;
                         case 2:
-                            total+=3;
+                            total+=(6);
                             break;
                     }
                 }
                 break;
             case 3:
-                total+=2;
+                if(num1 ==3){
+                    total+=4;//(2);
+                }
+                if(num1 > 3){
+                    switch(num1){
+                        case 4:
+                            total+=3;
+                            break;
+                        case 5:
+                            total+=1.5;
+                            break;
+                    }
+                }
+                if(num1 < 3){
+                    switch(num1){
+                        case 1:
+                            total+=6;
+                            break;
+                        case 2:
+                            total+=5;
+                            break;
+                    }
+                }
                 break;
             case 4:
                 if(num1 > 3){
                     switch(num1){
                         case 4:
-                            total+=1.5;
+                            total+=(1.5);
                             break;
                         case 5:
-                            total+=1;
+                            total+=(1);
                             break;
                     }
                 }
                 if(num1 == 3){
-                    total+= 2;
+                    total+= (3);
                 }
                 if (num1 < 3){
                     switch(num1){
                         case 1:
-                            total+=1;
+                            total+=(1);
                             break;
                         case 2:
-                            total+=1.5;
+                            total+=(2);
                             break;
                     }
                 }
@@ -223,29 +246,29 @@ public class AceAptitudeTest {
                 if(num1 > 3){
                     switch(num1){
                         case 4:
-                            total+=1;
+                            total+=(1);
                             break;
                         case 5:
-                            total+=0;
+                            total+=0;//(0);
                             break;
                     }
                 }
                 if(num1 == 3){
-                    total+= 2;
+                    total+= (1.5);
                 }
                 if (num1 < 3){
                     switch(num1){
                         case 1:
-                            total+=0;
+                            total+=0;//(hold +0);
                             break;
                         case 2:
-                            total+=1;
+                            total+=(1);
                             break;
                     }
                 }
                 break;
         }
-        //System.out.println("Sexuality score is " + total);
+        //System.out.println("Sexuality score is " + total +"\n");
 
         return total;
     }
@@ -254,7 +277,7 @@ public class AceAptitudeTest {
         float total = 0;
         String choice = null;
         int num = 0;
-        System.out.println("On a scale of 1-5, 1 for Very Low/Nonexistent and 5 for Very High, rate your sex drive.");
+        System.out.println("\nOn a scale of 1-5, 1 for Very Low/Nonexistent and 5 for Very High, rate your sex drive.\n");
         num = reading.nextInt();
         switch(num){
             case 1:
@@ -273,7 +296,7 @@ public class AceAptitudeTest {
                 total+=1;
                 break;
         }
-        System.out.println("Is an emotional bond important to you for beginning a sexual encounter?\n" +
+        System.out.println("\nIs an emotional bond important to you for beginning a sexual encounter?\n" +
                 "a. Yes\n" +
                 "b. No\n");
         choice = reading.next();
@@ -283,7 +306,7 @@ public class AceAptitudeTest {
 
         }
 
-        System.out.println("How often do you initiate sex with your partner(s)?\n" +
+        System.out.println("\nHow often do you initiate sex with your partner(s)?\n" +
                 "a. Never/ Not Applicable\n" +
                 "b. < 25% of the time \n" +
                 "c. 25 - 50% of the time \n" +
@@ -305,7 +328,7 @@ public class AceAptitudeTest {
                 break;
 
         }
-        System.out.println("Referencing your previous relationships, how often are you 'satisfied' with sexual intercourse?\n" +
+        System.out.println("\nReferencing your previous relationships, how often are you 'satisfied' with sexual intercourse?\n" +
                 "a. Never/ Not Applicable\n" +
                 "b. < 25% of the time \n" +
                 "c. 25 - 50% of the time \n" +
@@ -328,7 +351,7 @@ public class AceAptitudeTest {
                 break;
 
         }
-        //System.out.println("Sex score is " + total);
+        //System.out.println("Sex score is " + total +"\n");
 
         return (total);
     }
@@ -341,9 +364,9 @@ public class AceAptitudeTest {
         float reLat = 0;
         float sex = 0;
         int count = 0;
-        String menu = "Please select a category\n\n1.Sexuality\n2.Relationships\n3.Sex\n\n";
+        String menu = "\nPlease select a category\n\n1.Sexuality\n2.Relationships\n3.Sex\n\n";
         System.out.println("WELCOME TO THE ACE APTITUDE TEST!");
-        System.out.println("---------------------------------\n\n");
+        System.out.println("---------------------------------\n");
 
         while (count < 3) {
             System.out.print(menu);
@@ -393,6 +416,9 @@ public class AceAptitudeTest {
         System.out.println("Sex:           6-13\t\t\t"+"Sex:           "+sex);
 
     }
+
+
+
 
 
 
